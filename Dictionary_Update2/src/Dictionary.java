@@ -18,11 +18,12 @@ public class Dictionary {
         DictionaryCommandline dicCommand = new DictionaryCommandline();
         DictionaryManagement dicMana = new DictionaryManagement();
         dicMana.insertFromFile();
-        String input = sc.nextLine();
+        String input = "";
         while (true){
         if (input.equals("close")){                                             //nhap vao lenh "close" thi ket thuc chuong trinh
             break;
         }
+        input = sc.nextLine();
         while (true){
             if (input.equals("lookup")){                                        //nhap vao lenh "search" thi bat dau tim kiem
                 System.out.println("-------------");
@@ -50,9 +51,7 @@ public class Dictionary {
             dicCommand.dictionarySearcher();
             input = sc.nextLine();
         }
-        else
-            input = sc.nextLine();
-        continue;
+            
         }
         dicMana.dictionaryExportToFile();                                       //chap nhat du lieu moi vao file
     }

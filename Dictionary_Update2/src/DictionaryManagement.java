@@ -94,7 +94,7 @@ public class DictionaryManagement {
                     lineData = element.word_target + ":" + element.word_explain;
                     fw.write(lineData+"\n");
                 }
-                System.out.println("import sucessful!");
+                System.out.println("_________________________");
             }
         } catch (IOException ex) {                                              //in ra "Error" neu phat hien loi
             System.out.println("Error!!");
