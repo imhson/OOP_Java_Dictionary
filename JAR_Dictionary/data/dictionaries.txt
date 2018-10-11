@@ -1,0 +1,7 @@
+hi:chao
+hello:xin chao
+father:bo, cha
+mother:me
+shit:cut, phan
+bye:tam biet
+brother:anh trai, em trai

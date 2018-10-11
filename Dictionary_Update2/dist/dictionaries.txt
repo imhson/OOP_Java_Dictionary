@@ -1,6 +1,0 @@
-hi:chao
-hello:xin chao
-bye:tam biet
-house:ngoi nha
-kid:tre con, tre nho
-shit:cut

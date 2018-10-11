@@ -15,8 +15,10 @@ public class DictionaryManagement {
     }
     public void insertFromFile (){                                              //nhap du lieu tu file
         try {
-            File fileData = new File("dictionaries.txt");                           //tao flie
+            File file = new File("");                           //tao flie
+            File fileData = new File(file.getAbsolutePath()+"\\dictionaries.txt");
             BufferedReader br;
+            System.out.println(fileData.getAbsolutePath());
             try (FileReader fr = new FileReader(fileData)) {
                 br = new BufferedReader(fr);
                 String lineData=br.readLine();                                      //lay du lieu cua mot tu
