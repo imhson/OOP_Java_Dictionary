@@ -16,15 +16,18 @@ public class DictionaryManagement {
     public void insertFromFile (){                                              //nhap du lieu tu file
         try {
             File file = new File("");                           //tao flie
-            File fileData = new File (file.getAbsolutePath()+"\\data\\dictionaries.txt");
+            File fileData = new File (file.getAbsolutePath()+"\\dictionaries.txt");
             BufferedReader br;
             try (FileReader fr = new FileReader(fileData)) {
                 br = new BufferedReader(fr);
+                int count=0;
                 String lineData=br.readLine();                                      //lay du lieu cua mot tu
                 while (lineData!=null){
-                    String elements [];
+                    String[] elements;
+                    count++;
                     elements = lineData.split("::");                                        //tach du lieu goc thanh tu tieng anh va nghia tieng viet
-                    word newWord = new word(elements[0], elements[1]);                      //tao tu moi
+                    word newWord;                      //tao tu moi
+                    newWord = new word(elements[0],elements[1]);
                     Dictionary.arrayWord.add(newWord);                                  //them tu moi vao mang luu tru
                     lineData=br.readLine();
                 }
@@ -88,13 +91,13 @@ public class DictionaryManagement {
     }
     public void dictionaryExportToFile (){                                      //ham cap nhat du lieu moi
         File file = new File("");                           //tao flie
-        File fileData = new File (file.getAbsolutePath()+"\\data\\dictionaries.txt");
+        File fileData = new File (file.getAbsolutePath()+"\\dictionaries.txt");
         try {
             try (FileWriter fw = new FileWriter(fileData)) {
                 String lineData;
                 for (word element: Dictionary.arrayWord){
-                    lineData = element.word_target + "::" + element.word_explain;
-                    fw.write(lineData+"\n");
+                    lineData = element.word_target + "::" + element.word_explain+"\r\n";
+                    fw.write(lineData);
                 }
                 System.out.println("_________________________");
             }
