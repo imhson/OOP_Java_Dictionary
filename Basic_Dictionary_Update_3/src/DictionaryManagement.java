@@ -23,7 +23,7 @@ public class DictionaryManagement {
                 String lineData=br.readLine();                                      //lay du lieu cua mot tu
                 while (lineData!=null){
                     String elements [];
-                    elements = lineData.split(":");                                        //tach du lieu goc thanh tu tieng anh va nghia tieng viet
+                    elements = lineData.split("::");                                        //tach du lieu goc thanh tu tieng anh va nghia tieng viet
                     word newWord = new word(elements[0], elements[1]);                      //tao tu moi
                     Dictionary.arrayWord.add(newWord);                                  //them tu moi vao mang luu tru
                     lineData=br.readLine();
@@ -40,7 +40,7 @@ public class DictionaryManagement {
         System.out.print("Input Word: ");
         inputWord = sc.nextLine();
         for (word element: Dictionary.arrayWord){                               //duyet cac tu trong mang du lieu
-            if ((element.word_target).equals(inputWord)){                       //tim kiem
+            if ((element.word_target.toUpperCase()).equals(inputWord.toUpperCase())){                       //tim kiem
                 System.out.println("Output Meaning: " + element.word_explain);                       //in ra man hinh nghia cua tu can tim
             }
         }
@@ -64,7 +64,7 @@ public class DictionaryManagement {
             System.out.print("Word explain change into: ");
             String word_explain = scanInput.nextLine();
             for (word element: Dictionary.arrayWord){                          
-                if ((element.word_target).equals(word_target)){                
+                if ((element.word_target.toUpperCase()).equals(word_target.toUpperCase())){                
                     element.word_explain = word_explain;                       
                     break;
                 }
@@ -77,7 +77,7 @@ public class DictionaryManagement {
             String word_target = scanInput.nextLine();
             int count=0;
             for (word element: Dictionary.arrayWord){                          
-                if ((element.word_target).equals(word_target)){                
+                if ((element.word_target.toUpperCase()).equals(word_target.toUpperCase())){                
                     Dictionary.arrayWord.remove(element); 
                     System.out.println("Complete!");
                     break;
@@ -93,7 +93,7 @@ public class DictionaryManagement {
             try (FileWriter fw = new FileWriter(fileData)) {
                 String lineData;
                 for (word element: Dictionary.arrayWord){
-                    lineData = element.word_target + ":" + element.word_explain;
+                    lineData = element.word_target + "::" + element.word_explain;
                     fw.write(lineData+"\n");
                 }
                 System.out.println("_________________________");

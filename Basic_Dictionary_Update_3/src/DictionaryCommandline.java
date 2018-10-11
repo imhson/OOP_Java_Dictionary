@@ -31,7 +31,7 @@ public class DictionaryCommandline {
         int length_inputAPartOfWord = inputAPartOfWord.length();                //lay do dai cua cum tu do
         System.out.println("RESULT");
         for (word element: Dictionary.arrayWord){
-            if ((element.word_target.substring(0,length_inputAPartOfWord)).equals(inputAPartOfWord)){
+            if ((element.word_target.substring(0,length_inputAPartOfWord).toUpperCase()).equals(inputAPartOfWord.toUpperCase())){
                 System.out.println(element.word_target);
             }
         }
