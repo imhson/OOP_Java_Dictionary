@@ -15,16 +15,12 @@ public class DictionaryManagement {
     }
     public void insertFromFile (){                                              //nhap du lieu tu file
         try {
-            File file = new File("");                           //tao flie
-            File fileData = new File (file.getAbsolutePath()+"\\dictionaries.txt");
-            BufferedReader br;
-            try (FileReader fr = new FileReader(fileData)) {
-                br = new BufferedReader(fr);
-                int count=0;
+            InputStream inputStream = this.getClass().getResourceAsStream("/data/dictionaries.txt");
+            InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
+            try (BufferedReader br = new BufferedReader(inputStreamReader)) {
                 String lineData=br.readLine();                                      //lay du lieu cua mot tu
                 while (lineData!=null){
                     String[] elements;
-                    count++;
                     elements = lineData.split("::");                                        //tach du lieu goc thanh tu tieng anh va nghia tieng viet
                     word newWord;                      //tao tu moi
                     newWord = new word(elements[0],elements[1]);
@@ -32,7 +28,6 @@ public class DictionaryManagement {
                     lineData=br.readLine();
                 }
             }
-            br.close();
         } catch (IOException e) {                                     //bao loi neu khong tim thay file
             System.out.println("Error");
         }
@@ -91,7 +86,7 @@ public class DictionaryManagement {
     }
     public void dictionaryExportToFile (){                                      //ham cap nhat du lieu moi
         File file = new File("");                           //tao flie
-        File fileData = new File (file.getAbsolutePath()+"\\dictionaries.txt");
+        File fileData = new File (file.getAbsolutePath()+"\\src\\data\\dictionaries.txt");
         try {
             try (FileWriter fw = new FileWriter(fileData)) {
                 String lineData;

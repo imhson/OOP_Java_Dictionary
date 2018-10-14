@@ -10,7 +10,7 @@ nhap "edit" de chinh sua du lieu
 + nhap "delete" de xoa tu
 nhap "close" de ket thuc chuong trinh
 */
-public class Dictionary {
+public class Dictionary{
     public static ArrayList<word> arrayWord= new ArrayList<>();                 //tao mang word luu tru du lieu
    
     public static void main(String[] args) {
@@ -69,4 +69,5 @@ public class Dictionary {
         }
         dicMana.dictionaryExportToFile();                                       //chap nhat du lieu moi vao file
     }
+
 }

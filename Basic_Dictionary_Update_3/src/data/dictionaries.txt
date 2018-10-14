@@ -1204,3 +1204,4 @@ Yield strength of rein forcement in compression::Cường độ đàn hồi 
 Yield strength of reinforcement in tension::Cường độ đàn hồi của thép lúc kéo
 Z- beam::dầm chữ Z
 zonolite concrete::bê tông zônôlit (bê tông ko thấm nước)
+father::cha, bo
